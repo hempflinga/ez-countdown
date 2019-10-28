@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Helloworld!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/x-icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon-32x32.png" alt="Favicon">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		
+	</head>
+	<body>
+		<p id="countDown" data-countdown-year="2019" data-countdown-month="11" data-countdown-date="10" data-countdown-24hrTime="23:59:00"></p>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        var countDownDate = new Date();
+        countDownDate.setFullYear(parseInt($('#countDown').attr('data-countdown-year')));
+        countDownDate.setMonth(parseInt($('#countDown').attr('data-countdown-month')) - 1);
+        countDownDate.setDate(parseInt($('#countDown').attr('data-countdown-date')))
+        countDownDate.setHours(parseInt($('#countDown').attr('data-countdown-24hrTime').split(':')[0]),parseInt($('#countDown').attr('data-countdown-24hrTime').split(':')[1]),parseInt($('#countDown').attr('data-countdown-24hrTime').split(':')[2]));
+
+
+        var x = setInterval(function () {
+          var now = new Date().getTime();
+
+          var timeRemaining = countDownDate - now;
+
+          var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          $("#countDown").html( days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+
+          if (timeRemaining < 0) {
+            clearInterval(x);
+          }
+        }, 1000);
+      });
+    </script>
+	</body>
+</html>
