@@ -7,84 +7,48 @@
 		<link rel="shortcut icon" type="image/x-icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon-32x32.png" alt="Favicon">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="countdown.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald:400,700|Roboto&display=swap" rel="stylesheet">
-		<style>
-        
-@media (max-width: 575.9px) { 
-    .time-card {
-        min-width: 5rem;
-        height: 5rem;
-        margin: 0;
-        font-size: 3rem;
-        line-height: 5rem;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    }
-}
-
-@media (min-width: 576px) { 
-    .time-card {
-        min-width: 5rem;
-        height: 7rem;
-        margin: 0;
-                font-size: 4rem;
-                line-height: 7rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-}
-
-@media (min-width: 768px) { 
-    .time-card {
-        min-width: 10rem;
-        height: 10rem;
-        margin: .5rem;
-        font-size: 5rem;
-        line-height: 10rem;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-}
-
-@media (min-width: 992px) { 
-    .time-card {
-        min-width: 10rem;
-        height: 10rem;
-        margin: 1rem;
-        font-size: 5rem;
-        line-height: 10rem;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        
-    }
-}
-#countDown {
-    display: none;
-}
-         
-           .time-card {
-                display: inline-block;
-                border-radius: .2rem;
-                position: relative;
-                font-family: 'Oswald';
-                background-color: #FFFFFF;
-                color: #3A3B3E;
-                font-weight: bolder;
-            }
-        </style>
+	
 	</head>
 	<body>
-		
-        <p id="countDown" data-countdown-year="2019" data-countdown-month="11" data-countdown-date="10" data-countdown-24hrTime="23:59:00" ></p>
-        
-        <div id="countDownDisplay" class="wsite-content-title" style="text-align:center; font-family: 'Oswald', sans-serif; line-height: 1.5em; text-transform: uppercase;">
-            <div class="time-card" id="days">0</div>
-            <div class="time-card" id="hours">0</div>
-            <div class="time-card" id="minutes">0</div>
-            <div class="time-card" id="seconds">0</div>
-        </div>
+		<p id="countDown" data-countdown-year="2019" data-countdown-month="11" data-countdown-date="3" data-countdown-24hrTime="23:59:00" ></p>
+		<div id="countDownDisplay" class="wsite-content-title" style="text-align:center; font-family: 'Oswald', sans-serif; line-height: 1.5em; text-transform: uppercase;">
+			<div class="time-card">
+				<div class="time-card-body" id="days">
+				</div>
+				<div class="time-card-footer">
+					Days
+				</div>
+			</div>
+			<div class="time-card">
+				<div class="time-card-body" id="hours">
+				</div>
+				<div class="time-card-footer">
+					Hours
+				</div>
+			</div>
+			<div class="time-card">
+				<div class="time-card-body" id="minutes">
+				</div>
+				<div class="time-card-footer">
+					Minutes
+				</div>
+			</div>
+			<div class="time-card">
+				<div class="time-card-body" id="seconds">
+				</div>
+				<div class="time-card-footer">
+					Seconds
+				</div>
+			</div>
+		</div>
         
         
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+		<script src="countdown.js"></script>
     <script>
       $(function(){
             var countDownDate = new Date();
